@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="12px" viewBox="0 0 16 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>share</title>
+    <g id="Conversation-Intelligence" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Main-UI" transform="translate(-837.000000, -22.000000)" fill="#556C86">
+            <g id="share-clip" transform="translate(821.000000, 11.000000)">
+                <g id="share" transform="translate(16.018280, 11.000000)">
+                    <path d="M14.4154839,5.6 L8.80946237,0 L8.80946237,3.2 C3.20344086,4 0.800860215,8 -3.55271368e-15,12 C2.00215054,9.2 4.80516129,7.92 8.80946237,7.92 L8.80946237,11.2 L14.4154839,5.6 L14.4154839,5.6 Z" id="Shape"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
