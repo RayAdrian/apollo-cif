@@ -1,5 +1,6 @@
 import { combineReducers } from 'redux';
-import simpleReducer from './simpleReducer';
+import controlBar from './controlBar/controlBarReducers';
+
 export default combineReducers({
-  simpleReducer
+  controlBar
 });

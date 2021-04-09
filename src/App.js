@@ -6,7 +6,7 @@ import styled from '@emotion/styled';
 import ControlBar from './components/ControlBar';
 import './App.css';
 
-const Container = styled('div')({ width: '100%' });
+const Container = styled('div')({ maxWidth: 'calc(100% - 42px)' });
 
 function App() {
   
