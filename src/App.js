@@ -1,24 +1,19 @@
-import logo from './logo.svg';
+/* eslint-disable react/prop-types */
+/* eslint-disable no-unused-vars */
+import React from 'react';
+import styled from '@emotion/styled';
+
+import ControlBar from './components/ControlBar';
 import './App.css';
 
+const Container = styled('div')({ width: '100%' });
+
 function App() {
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container>
+      <ControlBar />
+    </Container>
   );
 }
 
