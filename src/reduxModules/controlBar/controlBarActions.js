@@ -4,3 +4,10 @@ export const actionSetIsAudioPlaying = (isPlaying = false) => dispatch => {
     payload: isPlaying
   });
 };
+
+export const actionSetCurrTime = (time = 0) => dispatch => {
+  dispatch({
+    type: 'SET_CURR_TIME',
+    payload: time
+  });
+};

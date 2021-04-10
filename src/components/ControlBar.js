@@ -2,7 +2,6 @@
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import styled from '@emotion/styled';
-import audioFile from '../assets/audio/call.wav';
 
 import playBack from '../assets/icons/rotate-left.svg';
 import playForward from '../assets/icons/rotate-right.svg';
@@ -10,7 +9,7 @@ import share from '../assets/icons/share.svg';
 import pauseIcon from '../assets/icons/pause-circle-fill.png';
 import playIcon from '../assets/icons/play-circle-fill.png';
 
-import { actionSetIsAudioPlaying } from '../reduxModules/controlBar/controlBarActions';
+import { actionSetCurrTime, actionSetIsAudioPlaying } from '../reduxModules/controlBar/controlBarActions';
 
 const Container = styled('div')({
   display: 'flex',
@@ -59,10 +58,10 @@ let checkTimeInterval;
 
 const ControlBar = ({
   isAudioPlaying,
-  actionSetIsAudioPlaying
+  audio,
+  actionSetIsAudioPlaying,
+  actionSetCurrTime
 }) => {
-
-  const [audio] = useState(new Audio(audioFile));
 
   const toggle = () => actionSetIsAudioPlaying(!isAudioPlaying);
 
@@ -70,7 +69,7 @@ const ControlBar = ({
     if (isAudioPlaying) {
       audio.play();
       checkTimeInterval = setInterval(function() {
-        console.log(audio.currentTime);
+        actionSetCurrTime(audio.currentTime);
       }, 100);
     } else { clearInterval(checkTimeInterval); audio.pause(); }
   }, [isAudioPlaying]);
@@ -104,9 +103,11 @@ const ControlBar = ({
 
 export default connect(
   state => ({
+    audio: state.controlBar.audio,
     isAudioPlaying: state.controlBar.isAudioPlaying
   }),
   {
-    actionSetIsAudioPlaying
+    actionSetIsAudioPlaying,
+    actionSetCurrTime
   }
 )(ControlBar);
