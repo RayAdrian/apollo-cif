@@ -8,7 +8,8 @@ import { timeToHMS } from '../../utils/timeUtils';
 import { actionSetIsAudioPlaying } from '../../reduxModules/controlBar/controlBarActions';
 
 const Container = styled('div')(({ isHighlighted, hover }) => ({
-  padding: '22px 24px',
+  // padding: `${isHighlighted || hover ? '22px' : '0px'} 24px`,
+  padding: '1px 24px',
   width: '100%',
   minHeight: 22,
   backgroundColor: isHighlighted || hover? 'rgba(26, 153, 246, 0.05)' : 'initial'

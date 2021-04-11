@@ -4,6 +4,7 @@ import React from 'react';
 import styled from '@emotion/styled';
 
 import ControlBar from './components/ControlBar';
+import WaveForm from './components/WaveForm';
 import Transcript from './components/Transcript';
 
 import './App.css';
@@ -15,6 +16,7 @@ function App() {
   return (
     <Container>
       <ControlBar />
+      <WaveForm />
       <Transcript />
     </Container>
   );
