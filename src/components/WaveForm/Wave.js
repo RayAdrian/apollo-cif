@@ -59,7 +59,6 @@ const Wave = ({ audio, transcript, actionSetTranscriptData }) => {
       actionSetTranscriptData(transcriptData, e.target.duration);
       setDuration(e.target.duration);
     });
-    console.log(transcript);
   }, []);
 
   return (

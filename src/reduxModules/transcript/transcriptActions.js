@@ -31,9 +31,15 @@ export const actionSetTranscriptData = (data, duration) => dispatch => {
       }
     }
   });
-  console.log(formattedData);
   dispatch({
     type: 'SET_TRANSCRIPT_DATA',
     payload: { ...data, time: formattedData }
+  });
+};
+
+export const actionSetSearch = word => dispatch => {
+  dispatch({
+    type: 'SET_SEARCH_WORD',
+    payload: word
   });
 };

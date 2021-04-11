@@ -5,19 +5,11 @@ import styled from '@emotion/styled';
 
 import transcript from '../../assets/transcript.json';
 
+import SearchBar from './SearchBar';
 import TranscriptParagraphContainer from './TranscriptParagraphContainer';
 
 const Container = styled('div')({
   padding: '24px 0'
-});
-
-const SearchBarPlaceholder = styled('div')({
-  width: 370,
-  height: 39,
-  borderRadius: 6,
-  backgroundColor: 'gray',
-  marginBottom: 15,
-  marginLeft: 22
 });
 
 const TranscriptContainer = styled('div')({
@@ -25,11 +17,11 @@ const TranscriptContainer = styled('div')({
   height: 'auto'
 });
 
-const Transcript = ({ audio, currTime }) => {
+const Transcript = ({ currTime }) => {
 
   return (
     <Container>
-      <SearchBarPlaceholder />
+      <SearchBar />
       <TranscriptContainer>
         {
           transcript.word_timings.map((wordArr, index) => {
@@ -52,7 +44,6 @@ const Transcript = ({ audio, currTime }) => {
 
 export default connect(
   state => ({
-    audio: state.controlBar.audio,
     currTime: state.controlBar.currTime
   }),
   {

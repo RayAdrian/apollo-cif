@@ -1,5 +1,6 @@
 const initialState = {
-  transcript: {}
+  transcript: {},
+  searchWord: ''
 };
 
 export default (state = {...initialState}, action) => {
@@ -8,6 +9,11 @@ export default (state = {...initialState}, action) => {
     return {
       ...state,
       transcript: action.payload
+    };
+  case 'SET_SEARCH_WORD':
+    return {
+      ...state,
+      searchWord: action.payload
     };
   default:
     return state;

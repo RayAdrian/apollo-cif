@@ -63,7 +63,8 @@ const TranscriptParagraphContainer = ({
   wordArr,
   currTime,
   audio, 
-  index, 
+  index,
+  searchWord,
   actionSetIsAudioPlaying}) => {
   const [hover, setHover] = useState(false);
 
@@ -90,7 +91,7 @@ const TranscriptParagraphContainer = ({
                   <TranscriptWord
                     onClick={() => handleClick(word.startTime)} 
                     key={index} 
-                    isHighlighted={currTime <= endTime && currTime >= startTime}
+                    isHighlighted={(currTime <= endTime && currTime >= startTime) || (word.word.toLowerCase().includes(searchWord.toLowerCase()) && searchWord !== '')}
                   >
                     {`${word.word} `}
                   </TranscriptWord>);
@@ -110,7 +111,8 @@ const TranscriptParagraphContainer = ({
 export default connect(
   state => ({
     audio: state.controlBar.audio,
-    currTime: state.controlBar.currTime
+    currTime: state.controlBar.currTime,
+    searchWord: state.transcript.searchWord
   }),
   {
     actionSetIsAudioPlaying
