@@ -3,8 +3,8 @@ import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import styled from '@emotion/styled';
 
-import playBack from '../assets/icons/rotate-left.svg';
-import playForward from '../assets/icons/rotate-right.svg';
+import { ReactComponent as PlayBack } from '../assets/icons/rotate-left.svg';
+import { ReactComponent as PlayForward } from '../assets/icons/rotate-right.svg';
 import share from '../assets/icons/share.svg';
 import pauseIcon from '../assets/icons/pause-circle-fill.png';
 import playIcon from '../assets/icons/play-circle-fill.png';
@@ -23,7 +23,7 @@ const Container = styled('div')({
 });
 
 const ControlsContainer = styled('div')({
-  width: 170,
+  width: 'auto',
   display: 'flex',
   flexDirection: 'row',
   alignItems: 'center'
@@ -31,14 +31,14 @@ const ControlsContainer = styled('div')({
 
 const PlaySpeed = styled('div')({
   borderRadius: 30,
-  border: '1px solid rgb(208, 217, 226)',
-  backgroundColor: 'rgb(250, 251, 252)',
+  border: '1px solid #D0D9E2',
+  backgroundColor: '#FAFBFC',
   marginLeft: 20,
   padding: '2px 10px',
   height: 20,
   fontSize: '1.2rem',
   fontWeight: 'bold',
-  color: 'rgb(85, 108, 134)',
+  color: '#556C86',
   display: 'flex',
   alignItems: 'center',
   cursor: 'pointer'
@@ -51,15 +51,24 @@ const ShareButton = styled('div')({
   alignItems: 'center',
   justifyContent: 'center',
   borderRadius: 6,
-  border: '1px solid rgb(208, 217, 226)',
-  backgroundColor: 'rgb(250, 251, 252)'
+  border: '1px solid #D0D9E2',
+  backgroundColor: '#FAFBFC'
 });
 
-const ForwardRewind = styled('img')({
+const Forward = styled(PlayForward)({
+  fill: '#556C86',
+  cursor: 'pointer',
   '&:hover': {
-    fill: 'red'
-  },
-  cursor: 'pointer'
+    fill: '#1A99F6'
+  }
+});
+
+const Back = styled(PlayBack)({
+  fill: '#556C86',
+  cursor: 'pointer',
+  '&:hover': {
+    fill: '#1A99F6'
+  }
 });
 
 let checkTimeInterval;
@@ -105,18 +114,18 @@ const ControlBar = ({
   return (
     <Container>
       <ControlsContainer>
-        <ForwardRewind src={playBack} onClick={() => { audio.currentTime -= 10; actionSetCurrTime(audio.currentTime); }}/>
+        <Back onClick={() => { audio.currentTime -= 10; actionSetCurrTime(audio.currentTime); }} />
         <div onClick={toggle} style={{ margin: '0 14px', cursor: 'pointer' }}>
           {
             isAudioPlaying ? <img src={pauseIcon} /> : <img src={playIcon} />
           }
         </div>
-        <ForwardRewind src={playForward} onClick={() => { audio.currentTime += 10; actionSetCurrTime(audio.currentTime); }}/>
+        <Forward onClick={() => { audio.currentTime += 10; actionSetCurrTime(audio.currentTime); }}/>
         <PlaySpeed onClick={handleChangeSpeed}>{speeds[speed].word}</PlaySpeed>
       </ControlsContainer>
       <ShareButton>
         <img src={share} />
-        <div style={{ marginLeft: 6, fontSize: '1.2rem', fontWeight: 'bold', color: 'rgb(85, 108, 134)' }}>Share</div>
+        <div style={{ marginLeft: 6, fontSize: '1.2rem', fontWeight: 'bold', color: '#556C86' }}>Share</div>
       </ShareButton>
     </Container>
   );

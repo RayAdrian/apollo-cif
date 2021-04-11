@@ -27,7 +27,7 @@ const TimeContainer = styled('div')(({ index }) => ({
   paddingTop: 1,
   fontWeight: 500,
   fontSize: '0.9rem',
-  color: index % 2 ? 'rgb(26, 153, 246)' : 'rgb(136, 104, 233)',
+  color: index % 2 ? '#1A99F6' : '#8858E9',
 }));
 
 const Divider = styled('div')(({ index }) => ({
@@ -41,7 +41,7 @@ const TranscriptWord = styled('span')(({ isHighlighted }) => ({
   backgroundColor: isHighlighted ? 'rgba(26, 153, 246, 0.5)' : 'initial',
   cursor: 'pointer',
   fontSize: '0.9rem',
-  color: 'rgb(85, 108, 134)',
+  color: '#556C86',
   '&:hover': {
     backgroundColor: 'rgba(26, 153, 246, 0.5)'
   }
@@ -53,7 +53,7 @@ const Paragraph = styled('div')({
 });
 
 const ShareAction = styled('div')({
-  color: 'rgb(26, 153, 246)',
+  color: '#1A99F6',
   marginTop: 10,
   cursor: 'pointer'
 });

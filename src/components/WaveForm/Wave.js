@@ -27,7 +27,7 @@ const Divider = styled('div')({
   top: 45,
   width: 1,
   height: 20,
-  backgroundColor: 'rgb(223, 226, 229)'
+  backgroundColor: '#DFE2E5'
 });
 
 const Percentage = styled('div')(({ hasBorderBottom = false }) => ({
@@ -35,9 +35,9 @@ const Percentage = styled('div')(({ hasBorderBottom = false }) => ({
   height: 55, 
   display: 'flex',
   alignItems: 'center',
-  borderBottom: hasBorderBottom ? '1px solid rgb(223, 226, 229)' : null,
+  borderBottom: hasBorderBottom ? '1px solid #DFE2E5' : null,
   fontSize: '1.2rem',
-  color: hasBorderBottom ? 'rgb(136, 104, 233)' : 'rgb(26, 153, 246)'
+  color: hasBorderBottom ? '#8858E9' : '#1A99F6'
 }));
 
 const Wave = ({ audio, transcript, actionSetTranscriptData }) => {

@@ -12,7 +12,7 @@ const Container = styled('div')({
   maxWidth: 370,
   margin: '24px 24px 15px',
   borderRadius: 6,
-  border: '1px solid rgb(208, 217, 226)'
+  border: '1px solid #D0D9E2'
 });
 
 const SearchIcon = styled('i')({
@@ -25,7 +25,7 @@ const SearchInput = styled('input')({
   width: '100%',
   outlineWidth: 0,
   padding: '10px 10px 10px 0',
-  color: 'rgb(151, 151, 151)',
+  color: '#979797',
   borderColor: 'transparent'
 });
 

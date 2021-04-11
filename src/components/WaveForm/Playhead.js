@@ -27,7 +27,7 @@ const WaveContainer = styled('div')({
 
 const WaveChunkTop = styled('div')(({ item, duration, currTime }) => ({
   height: 55,
-  background: `repeating-linear-gradient(90deg, transparent, transparent 1px, ${currTime < item.endTime ? 'rgb(136, 104, 233)' : '#d5dde3'} 1px, ${currTime < item.endTime ? 'rgb(136, 104, 233)' : '#d5dde3'} 5px)`,
+  background: `repeating-linear-gradient(90deg, transparent, transparent 1px, ${currTime < item.endTime ? '#8858E9' : '#d5dde3'} 1px, ${currTime < item.endTime ? '#8858E9' : '#d5dde3'} 5px)`,
   width: `${(item.time / duration) * 100}%`,
   marginTop: -2,
   cursor: 'pointer'
@@ -35,7 +35,7 @@ const WaveChunkTop = styled('div')(({ item, duration, currTime }) => ({
 
 const WaveChunkBottom = styled('div')(({ item, duration, currTime }) => ({
   height: 55,
-  background: `repeating-linear-gradient(90deg, transparent, transparent 1px, ${currTime < item.endTime ? 'rgb(26, 153, 246)' : '#d5dde3'} 1px, ${currTime < item.endTime ? 'rgb(26, 153, 246)' : '#d5dde3'} 5px)`,
+  background: `repeating-linear-gradient(90deg, transparent, transparent 1px, ${currTime < item.endTime ? '#1A99F6' : '#d5dde3'} 1px, ${currTime < item.endTime ? '#1A99F6' : '#d5dde3'} 5px)`,
   width: `${(item.time / duration) * 100}%`,
   marginTop: 2,
   cursor: 'pointer'

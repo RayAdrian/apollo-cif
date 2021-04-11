@@ -12,17 +12,17 @@ const Container = styled('div')({
   marginBottom: 36,
   display: 'flex',
   alignItems: 'center',
-  backgroundColor: 'rgb(239, 243, 246)'
+  backgroundColor: '#EFF3F6'
 });
 
 const CurrTimeText = styled('span')({
   fontSize: '1.2rem',
   fontWeight: 'bold',
-  color: 'rgb(53, 64, 83)'
+  color: '#354053'
 });
 
 const DurationText = styled(CurrTimeText)({
-  color: 'rgb(126, 143, 165)',
+  color: '#7E8FA5',
   marginLeft: 5
 });
 
