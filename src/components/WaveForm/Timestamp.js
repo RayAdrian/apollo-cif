@@ -22,7 +22,8 @@ const CurrTimeText = styled('span')({
 });
 
 const DurationText = styled(CurrTimeText)({
-  color: 'rgb(126, 143, 165)'
+  color: 'rgb(126, 143, 165)',
+  marginLeft: 5
 });
 
 const Timestamp = ({ audio, currTime }) => {
@@ -36,7 +37,7 @@ const Timestamp = ({ audio, currTime }) => {
 
   return (
     <Container>
-      <CurrTimeText>{`${timeToHMS(Math.floor(currTime))} `}</CurrTimeText>
+      <CurrTimeText>{`${timeToHMS(Math.floor(currTime))}`}</CurrTimeText>
       <DurationText>{`/ ${timeToHMS(Math.floor(duration))}`}</DurationText>
     </Container>
   );

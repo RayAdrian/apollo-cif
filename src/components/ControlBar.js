@@ -16,7 +16,7 @@ const Container = styled('div')({
   flexDirection: 'row',
   width: '100%',
   backgroundColor: '#EFF3F6',
-  height: 59,
+  maxHeight: 59,
   padding: '13px 17px 12px 25px',
   justifyContent: 'space-between',
   alignItems: 'center'
@@ -40,7 +40,8 @@ const PlaySpeed = styled('div')({
   fontWeight: 'bold',
   color: 'rgb(85, 108, 134)',
   display: 'flex',
-  alignItems: 'center'
+  alignItems: 'center',
+  cursor: 'pointer'
 });
 
 const ShareButton = styled('div')({
@@ -54,6 +55,13 @@ const ShareButton = styled('div')({
   backgroundColor: 'rgb(250, 251, 252)'
 });
 
+const ForwardRewind = styled('img')({
+  '&:hover': {
+    fill: 'red'
+  },
+  cursor: 'pointer'
+});
+
 let checkTimeInterval;
 
 const ControlBar = ({
@@ -62,6 +70,14 @@ const ControlBar = ({
   actionSetIsAudioPlaying,
   actionSetCurrTime
 }) => {
+  const speeds = [
+    { word: '0.5x', value: 0.5 },
+    { word: '0.75x', value: 0.75 },
+    { word: '1.0x', value: 1 },
+    { word: '1.5x', value: 1.5 },
+    { word: '2.0x', value: 2 }
+  ];
+  const [speed, setSpeed] = useState(2);
 
   const toggle = () => actionSetIsAudioPlaying(!isAudioPlaying);
 
@@ -81,17 +97,22 @@ const ControlBar = ({
     };
   }, []);
 
+  const handleChangeSpeed = () => {
+    audio.playbackRate = speeds[speed === 4 ? 0 : speed + 1].value;
+    setSpeed(speed === 4 ? 0 : speed + 1);
+  };
+
   return (
     <Container>
       <ControlsContainer>
-        <img src={playBack} />
+        <ForwardRewind src={playBack} onClick={() => { audio.currentTime -= 10; actionSetCurrTime(audio.currentTime); }}/>
         <div onClick={toggle} style={{ margin: '0 14px', cursor: 'pointer' }}>
           {
             isAudioPlaying ? <img src={pauseIcon} /> : <img src={playIcon} />
           }
         </div>
-        <img src={playForward}/>
-        <PlaySpeed>1.0x</PlaySpeed>
+        <ForwardRewind src={playForward} onClick={() => { audio.currentTime += 10; actionSetCurrTime(audio.currentTime); }}/>
+        <PlaySpeed onClick={handleChangeSpeed}>{speeds[speed].word}</PlaySpeed>
       </ControlsContainer>
       <ShareButton>
         <img src={share} />

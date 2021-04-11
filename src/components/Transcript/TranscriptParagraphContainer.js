@@ -24,7 +24,7 @@ const TranscriptItemContainer = styled('div')(({ index, isHighlighted }) => ({
 }));
 
 const TimeContainer = styled('div')(({ index }) => ({
-  paddingTop: 4,
+  paddingTop: 1,
   fontWeight: 500,
   fontSize: '0.9rem',
   color: index % 2 ? 'rgb(26, 153, 246)' : 'rgb(136, 104, 233)',
@@ -40,6 +40,8 @@ const TranscriptWord = styled('span')(({ isHighlighted }) => ({
   transition: 'all 0.1s ease 0s',
   backgroundColor: isHighlighted ? 'rgba(26, 153, 246, 0.5)' : 'initial',
   cursor: 'pointer',
+  fontSize: '0.9rem',
+  color: 'rgb(85, 108, 134)',
   '&:hover': {
     backgroundColor: 'rgba(26, 153, 246, 0.5)'
   }
