@@ -88,11 +88,13 @@ const ControlBar = ({
   ];
   const [speed, setSpeed] = useState(2);
 
-  const toggle = () => actionSetIsAudioPlaying(!isAudioPlaying);
+  const toggle = () => { 
+    if (!isAudioPlaying) audio.play(); 
+    actionSetIsAudioPlaying(!isAudioPlaying); 
+  };
 
   useEffect(() => {
     if (isAudioPlaying) {
-      audio.play();
       checkTimeInterval = setInterval(function() {
         actionSetCurrTime(audio.currentTime);
       }, 100);

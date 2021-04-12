@@ -17,7 +17,7 @@ const OuterContainer = styled('div')({
 
 const Head = styled('div')(({ width, isRemaining = false }) => ({
   width,
-  borderTop: `1px solid ${isRemaining ? 'rgb(223, 226, 229)' : '#727578'}`
+  borderTop: `1px solid ${isRemaining ? '#DFE2E5' : '#727578'}`
 }));
 
 const WaveContainer = styled('div')({
@@ -59,7 +59,7 @@ const Playhead = ({ audio, currTime, transcript, actionSetIsAudioPlaying }) => {
           transcript.time.map((item, index) => {
             if (!(index % 2)) {
               return <WaveChunkTop 
-                onClick={() => { audio.currentTime = item.startTime; actionSetIsAudioPlaying(true); }} 
+                onClick={() => { audio.currentTime = item.startTime; audio.play(); actionSetIsAudioPlaying(true); }} 
                 key={index} 
                 item={item} 
                 duration={duration} 
@@ -79,7 +79,7 @@ const Playhead = ({ audio, currTime, transcript, actionSetIsAudioPlaying }) => {
           transcript.time.map((item, index) => {
             if (index % 2) {
               return <WaveChunkBottom 
-                onClick={() => { audio.currentTime = item.startTime; actionSetIsAudioPlaying(true); }} 
+                onClick={() => { audio.currentTime = item.startTime; audio.play(); actionSetIsAudioPlaying(true); }} 
                 key={index} 
                 item={item} 
                 duration={duration} 
