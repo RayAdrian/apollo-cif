@@ -16,5 +16,5 @@ Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ## Deployed production build
-For the deployed version, you may access it through https://apollo-conv-intelligence.herokuapp.com/
+For the deployed version, you may access it through https://apollo-cif.vercel.app/
 
